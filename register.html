@@ -1,0 +1,59 @@
+<!-- Created by 101233904 Yassar Lutfan for COS10026 -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="A registration form for the Brew n Go website">
+        <meta name="keywords" content="form, registration">
+        <meta name="author" content="Yassar Lutfan bin Yusuf">
+        <title>Register - Brew & Go</title>
+
+        <style>
+            .center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            h1 {
+                color: #573c2c;
+            }
+            fieldset {
+                background-color: #fef4e0;
+            }
+            legend {
+                background-color: #573c2c;
+                color: #fef4e0;
+                padding: 5px 10px;
+            }
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class='center'>Welcome!</h1>
+
+        <form method="post" class='center'> <!-- action="register I guess" -->
+                <fieldset>
+                    <legend>Register a new account</legend>
+                    <p>
+                        <label for="userEmail">Email Address</label><br>
+                        <input type="email" name= "userEmail" id="userEmail" required="required">
+                    </p>
+
+                    <p>
+                        <label for="userPassword">Password</label><br>
+                        <input type="userPassword" name= "userPassword" id="userPassword" required="required">
+                    </p>
+
+                    <p>
+                        <label for="userPassword">Confirm Password</label><br>
+                        <input type="userPassword" name= "userPassword" id="userPassword" required="required">
+                    </p>
+                    <input type="submit" value="Login">
+                    <input type="reset" value="Reset">
+                </fieldset>
+        </form>
+        <p class='center'><a href="login.html">I already have an account.</a></p>
+    </body>
+</html>

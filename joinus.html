@@ -1,0 +1,134 @@
+<!-- Created by 101233904 Yassar Lutfan for COS10026 -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="A login form for the Brew n Go website">
+        <meta name="keywords" content="form, login">
+        <meta name="author" content="Yassar Lutfan bin Yusuf">
+        <title>Join Us - Brew & Go</title>
+
+        <style>
+            .center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            h1 {
+                color: #573c2c;
+            }
+            p {
+                color: #573c2c;
+            }
+            fieldset {
+                background-color: #fef4e0;
+                border-color: #fef4e0;
+            }
+            legend {
+                background-color: #573c2c;
+                color: #fef4e0;
+                padding: 5px 10px;
+            }
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class='center'>Join us!</h1>
+        <p class='center'>If you want to join our team of brewmasters, fill in your details below.</p>
+
+        <form method="post" class='center'> <!-- action="login I guess" -->
+                <fieldset>
+                    <legend>Details</legend>
+                    <p>
+                        <label for="firstName">First Name</label><br>
+                        <input type="text" name="firstName" id="firstName" required="required" pattern="[a-zA-Z]+" maxlength="25" placeholder="John">
+                    </p>
+                    <p>
+                        <label for="lastName">Last Name</label><br>
+                        <input type="text" name="lastName" id="lastName" required="required" pattern="[a-zA-Z]+" maxlength="25" placeholder="Doe">
+                    </p>
+                    <p>
+                        <label for="email">E-mail Address</label><br>
+                        <input type="email" name="email" id="email" required="required" placeholder="example@example.com">
+                    </p>
+                    <fieldset>
+                        <legend>Address</legend>
+                        <p>
+                            <label for="addressStreet">Address</label><br>
+                            <input type="text" name="firstName" id="firstName" required="required" maxlength="40" placeholder="Address line 1 & 2">
+                        </p>
+                        <p>
+                            <label for="addressCity">City</label><br>
+                            <input type="text" name="firstName" id="firstName" required="required" maxlength="20" placeholder="Kuching">
+                        </p>
+                        <p>
+                            <label for="addressState">State</label><br>
+                            <select name="addressState" id="addressState" required="required">
+                                <option value="">Choose one...</option>
+                                <!-- The values are the state's area codes, also, specification requires Federal Territories as well -->
+                                <option value="MY-01">Johor</option>
+                                <option value="MY-02">Kedah</option>
+                                <option value="MY-03">Kelantan</option>
+                                <option value="MY-04">Malacca</option>
+                                <option value="MY-05">Negeri Sembilan</option>
+                                <option value="MY-06">Pahang</option>
+                                <option value="MY-07">Penang</option>
+                                <option value="MY-08">Perak</option>
+                                <option value="MY-09">Perlis</option>
+                                <option value="MY-10">Selangor</option>
+                                <option value="MY-11">Terengganu</option>
+                                <option value="MY-12">Sabah</option>
+                                <option value="MY-13">Sarawak</option>
+                                <option value="MY-14">Kuala Lumpur</option>
+                                <option value="MY-15">Labuan</option>
+                                <option value="MY-16">Putrajaya</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="addressPostcode">Postcode</label><br>
+                            <input type="number" name="addressPostcode" id="addressPostcode" required="required" max="99999" min="0" placeholder="00000">
+                        </p>
+                    </fieldset>
+                    <p>
+                        <label for="ageRange">Age Range</label><br>
+                        <input type="radio" name="ageRange" id="19-" required="required">19-
+                        <input type="radio" name="ageRange" id="20-30">20-30
+                        <input type="radio" name="ageRange" id="31-40">31-40
+                        <input type="radio" name="ageRange" id="41+">41+
+                    </p>
+
+                    <p>
+                        <label for="languages">Languages Spoken</label><br>
+                        <input type="checkbox" name="english" id="english">English
+                        <input type="checkbox" name="malay" id="malay">Malay
+                        <input type="checkbox" name="chinese" id="chinese">中文
+                    </p>
+
+                    <p>
+                        <label for="position">Desired Job</label><br>
+                        <select name="position" id="position" required="required">
+                            <option value="">Choose one...</option>
+                            <option value="barista">Barista</option>
+                            <option value="cashier">Cashier</option>
+                            <option value="maintenance">Maintenance</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="resume">Attach your resume</label><br>
+                        Attached file:
+                        <input type="file" name="resume" id="resume" accept=".doc, .docx, .pdf"> <!-- There is no way, to my knowledge, of capping this to 200Kbs without the use of Javascript -->
+                    </p>
+                    <p>
+                        <label for="appearance">Attach an image of yourself</label><br>
+                        Attached file:
+                        <input type="file" name="appearance" id="appearance" accept="image/*"> <!-- There is no way, to my knowledge, of capping this to 200Kbs without the use of Javascript -->
+                    </p>
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </fieldset>
+        </form>
+    </body>
+</html>

@@ -6,7 +6,7 @@
         <meta name="description" content="A login form for the Brew n Go website">
         <meta name="keywords" content="form, login">
         <meta name="author" content="Yassar Lutfan bin Yusuf">
-        <title>Login - Brew & Go</title>
+        <title>Join Us - Brew & Go</title>
 
         <style>
             .center {
@@ -15,6 +15,9 @@
                 align-items: center;
             }
             h1 {
+                color: #573c2c;
+            }
+            p {
                 color: #573c2c;
             }
             fieldset {
@@ -31,21 +34,56 @@
         </style>
     </head>
     <body>
-        <h1 class='center'>Welcome back!</h1>
+        <h1 class='center'>Join us!</h1>
+        <p class='center'>>If you want to join our team of brewmasters, fill in your details below.</p>
 
         <form method="post" class='center'> <!-- action="login I guess" -->
                 <fieldset>
-                    <legend>Login to an existing account</legend>
+                    <legend>Details</legend>
                     <p>
-                        <label for="userEmail">Email Address</label><br>
-                        <input type="email" name= "userEmail" id="userEmail" required="required">
+                        <label for="firstName">First Name</label><br>
+                        <input type="text" name="firstName" id="firstName" required="required" placeholder="John">
+                    </p>
+                    <p>
+                        <label for="lastName">Last Name</label><br>
+                        <input type="text" name="lastName" id="lastName" required="required" placeholder="Doe">
+                    </p>
+                    <p>
+                        <label for="email">E-mail Address</label><br>
+                        <input type="email" name="email" id="email" required="required" placeholder="example@example.com">
+                    </p>
+                    <p>
+                        <label for="ageRange">Age Range</label><br>
+                        <input type="radio" name="ageRange" id="19-" required="required">19-
+                        <input type="radio" name="ageRange" id="20-30">20-30
+                        <input type="radio" name="ageRange" id="31-40">31-40
+                        <input type="radio" name="ageRange" id="41+">41+
                     </p>
 
                     <p>
-                        <label for="userPassword">Password</label><br>
-                        <input type="userPassword" name= "userPassword" id="userPassword" required="required">
+                        <label for="languages">Languages Spoken</label><br>
+                        <input type="checkbox" name="english" id="english">English
+                        <input type="checkbox" name="malay" id="malay">Malay
+                        <input type="checkbox" name="chinese" id="chinese">中文
                     </p>
-                    <input type="submit" value="Login">
+
+                    <p>
+                        <label for="position">Desired Job</label><br>
+                        <select name="position" id="position" required="required">
+                            <option value="">Choose one...</option>
+                            <option value="barista">Barista</option>
+                            <option value="cashier">Cashier</option>
+                            <option value="maintenance">Maintenance</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="appearance">Attach an image of yourself</label><br>
+                        Attached image:
+                        <input type="file" name="appearance" id="appearance">
+                    </p>
+                    <input type="submit" value="Submit">
                     <input type="reset" value="Reset">
                 </fieldset>
         </form>

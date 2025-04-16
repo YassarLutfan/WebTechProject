@@ -7,7 +7,7 @@
     <meta name="keywords" content=" " />
     <meta name="author" content=" "  />
     <link rel="stylesheet" href="styles.css">
-    <title>Product1</title>
+    <title>Non-Coffee</title>
 </head>
 
 
@@ -58,32 +58,45 @@
                 <img src="brewngologo.jpg" alt="banner image" width="100px" height="100px">
                 <figcaption>by Brew & Go. Coffee</figcaption>
             </figure>
-            <h1 class="productCatagory">Basic Brew</h1>
+            <h1 class="productCatagory">Products</h1>
+
             <aside>
-                <ol>
-                    <li><a href="#">Basic Brew</a></li>
-                    <li><a href="#">Artisan Brew</a></li>
-                    <li><a href="#">Non-Coffee</a></li>
-                    <li><a href="#">Hot Beverages</a></li>
-                </ol>
+                <div class="productKeyDefinitionFlipCard">
+                    <div class="productKeyDefinitionFlipCardInner">
+                        <div class="productKeyDefinitionFlipCardFront">
+                            <h3>Key Definitions</h3>
+                        </div> 
+
+                        <div class="productKeyDefinitionFlipCardBack">
+                            <dl>
+                                <div>
+                                    <dt>MP</dt>
+                                    <dd>Member Price</dd>
+                                </div>
+                                <hr>
+                                <div>
+                                    <dt>NP</dt>
+                                    <dd>Normal Price</dd>
+                                </div>
+                                <hr>
+                                <div>
+                                    <dt>RM</dt>
+                                    <dd>Ringgit Malaysia</dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
             </aside>
         </div>
 
-        <div class="keyDefinition">
-            <dl>
-                <div>
-                    <dt>MP</dt>
-                    <dd>Member Price</dd>
-                </div>
-                <div>
-                    <dt>NP</dt>
-                    <dd>Normal Price</dd>
-                </div>
-                <div>
-                    <dt>RM</dt>
-                    <dd>Ringgit Malaysia</dd>
-                </div>
-            </dl>
+        <div class="productCatagorySelector">
+            <ol>
+                <li><a href="#">Basic Brew</a></li>
+                <li><a href="#">Artisan Brew</a></li>
+                <li class="currentProductPage"><a href="#">Non-Coffee</a></li>
+                <li><a href="#">Hot Beverages</a></li>
+            </ol>
         </div>
     </section>
 
@@ -91,16 +104,16 @@
         <div class="productCardSection">
             <div class="productCardContainter">
                 <button class="productButton">
-                    <div class="productCard" id="AerocanoCard">
-                        <h2 class="productName">Aerocano</h2>
+                    <div class="productCard" id="Chocolate">
+                        <h2 class="productName">Chocolate</h2>
                         <table>
                             <tr>
                                 <th>MP</th>
-                                <td>RM10.90</td>
+                                <td>RM13.90 </td>
                             </tr>
                             <tr>
                                 <th>NP</th>
-                                <td>RM12.90</td>
+                                <td>RM15.90</td>
                             </tr>
                             <tr>
                                 <th colspan="2">Add RM2 for Oat Milk</th>
@@ -110,35 +123,35 @@
                 </button>
                 
                 <button class="productButton">
-                    <div class="productCard" id="CappucinoColdFoamCard">
-                        <h2 class="productName">Cappucino Cold Foam</h2>
+                    <div class="productCard" id="MintChocolate">
+                        <h2 class="productName">Mint Chocolate</h2>
                         <table>
                             <tr>
                                 <th>MP</th>
-                                <td>RM11.90</td>
+                                <td>RM13.90 </td>
                             </tr>
                             <tr>
                                 <th>NP</th>
+                                <td>RM15.90</td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">Add RM2 for Oat Milk</th>
+                            </tr>
+                        </table>
+                    </div>
+                </button>
+
+                <button class="productButton">
+                    <div class="productCard" id="OrangeChocolate">
+                        <h2 class="productName">Orange Chocolate</h2>
+                        <table>
+                            <tr>
+                                <th>MP</th>
                                 <td>RM13.90</td>
                             </tr>
                             <tr>
-                                <th colspan="2">Add RM2 for Oat Milk</th>
-                            </tr>
-                        </table>
-                    </div>
-                </button>
-
-                <button class="productButton">
-                    <div class="productCard" id="Aerocano">
-                        <h2 class="productName">Aerocano</h2>
-                        <table>
-                            <tr>
-                                <th>MP</th>
-                                <td>RM10.90</td>
-                            </tr>
-                            <tr>
                                 <th>NP</th>
-                                <td>RM12.90</td>
+                                <td>RM15.90</td>
                             </tr>
                             <tr>
                                 <th colspan="2">Add RM2 for Oat Milk</th>
@@ -148,16 +161,16 @@
                 </button>
 
                 <button class="productButton">
-                    <div class="productCard" id="Aerocano">
-                        <h2 class="productName">Aerocano</h2>
+                    <div class="productCard" id="YuzuSoda">
+                        <h2 class="productName">Yuzu Soda</h2>
                         <table>
                             <tr>
                                 <th>MP</th>
-                                <td>RM10.90</td>
+                                <td>RM13.90</td>
                             </tr>
                             <tr>
                                 <th>NP</th>
-                                <td>RM12.90</td>
+                                <td>RM15.90</td>
                             </tr>
                             <tr>
                                 <th colspan="2">Add RM2 for Oat Milk</th>
@@ -167,16 +180,16 @@
                 </button>
 
                 <button class="productButton">
-                    <div class="productCard" id="Aerocano">
-                        <h2 class="productName">Aerocano</h2>
+                    <div class="productCard" id="StrawberrySoda">
+                        <h2 class="productName">Strawberry Soda</h2>
                         <table>
                             <tr>
                                 <th>MP</th>
-                                <td>RM10.90</td>
+                                <td>RM13.90</td>
                             </tr>
                             <tr>
                                 <th>NP</th>
-                                <td>RM12.90</td>
+                                <td>RM15.90</td>
                             </tr>
                             <tr>
                                 <th colspan="2">Add RM2 for Oat Milk</th>
@@ -186,16 +199,16 @@
                 </button>
 
                 <button class="productButton">
-                    <div class="productCard" id="Aerocano">
-                        <h2 class="productName">Aerocano</h2>
+                    <div class="productCard" id="YuzuCheese">
+                        <h2 class="productName">Yuzu Cheese</h2>
                         <table>
                             <tr>
                                 <th>MP</th>
-                                <td>RM10.90</td>
+                                <td>RM13.90</td>
                             </tr>
                             <tr>
                                 <th>NP</th>
-                                <td>RM12.90</td>
+                                <td>RM15.90</td>
                             </tr>
                             <tr>
                                 <th colspan="2">Add RM2 for Oat Milk</th>
@@ -204,6 +217,81 @@
                     </div>
                 </button>
 
+                <button class="productButton">
+                    <div class="productCard" id="YuriMatcha">
+                        <h2 class="productName">Strawberry Soda</h2>
+                        <table>
+                            <tr>
+                                <th>MP</th>
+                                <td>RM13.90</td>
+                            </tr>
+                            <tr>
+                                <th>NP</th>
+                                <td>RM15.90</td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">Add RM2 for Oat Milk</th>
+                            </tr>
+                        </table>
+                    </div>
+                </button>
+
+                <button class="productButton">
+                    <div class="productCard" id="StrawberryMatcha">
+                        <h2 class="productName">Strawberry Matcha</h2>
+                        <table>
+                            <tr>
+                                <th>MP</th>
+                                <td>RM14.90</td>
+                            </tr>
+                            <tr>
+                                <th>NP</th>
+                                <td>RM16.90</td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">Add RM2 for Oat Milk</th>
+                            </tr>
+                        </table>
+                    </div>
+                </button>
+
+                <button class="productButton">
+                    <div class="productCard" id="YuzuMatcha">
+                        <h2 class="productName">Yuzu Matcha</h2>
+                        <table>
+                            <tr>
+                                <th>MP</th>
+                                <td>RM14.90</td>
+                            </tr>
+                            <tr>
+                                <th>NP</th>
+                                <td>RM16.90</td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">Add RM2 for Oat Milk</th>
+                            </tr>
+                        </table>
+                    </div>
+                </button>
+
+                <button class="productButton">
+                    <div class="productCard" id="Houjicha">
+                        <h2 class="productName">Houjicha</h2>
+                        <table>
+                            <tr>
+                                <th>MP</th>
+                                <td>RM13.90</td>
+                            </tr>
+                            <tr>
+                                <th>NP</th>
+                                <td>RM15.90</td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">Add RM2 for Oat Milk</th>
+                            </tr>
+                        </table>
+                    </div>
+                </button>
                 
             </div>
         </div>
@@ -232,13 +320,7 @@
               <ul>
                 <li><a href="#">Sections</a></li>
               </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Video</h4>
-                <ul>
-                  <li><a href="#">Watch</a></li>
-                </ul>
-              </div>              
+            </div>             
             <div class="footer-col">
               <h4>Follow Us</h4>
               <div class="social-links">

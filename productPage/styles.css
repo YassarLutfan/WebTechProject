@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     margin: 20px;
     border-radius: 10px;
     background-color: #fff3e0;
@@ -32,45 +32,98 @@ h1{
     font-weight: bold;
 }
 
-
 aside {
     float: right;
-    width: auto;
-    border: solid #5a3e2b;
-    border-radius: 10px; 
+    width: fit-content;
+    height: fit-content;
+    margin: 10px;
 
-    ol{
-        float: right;
+    .productKeyDefinitionFlipCard {
+        background-color: transparent;
+        perspective: 1000px; 
+        height: 120px;
+        width: 130px;
+    }
+    
+    .productKeyDefinitionFlipCardInner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.5s;
+        transform-style: preserve-3d;
+    }
+    
+    .productKeyDefinitionFlipCard:hover .productKeyDefinitionFlipCardInner {
+        transform: rotateY(180deg);
+    }
+    
+    .productKeyDefinitionFlipCardFront, .productKeyDefinitionFlipCardBack {
+        position: absolute;
+        align-content: center;
+        border: solid #5a3e2b 3px;
+        border-radius: 10px;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+    }
+    
+    .productKeyDefinitionFlipCardFront {
+        background-color: #fff3e0;
+        color: black;
+    }
+    
+    .productKeyDefinitionFlipCardBack {
+        background-color: #5a3e2b;
+        color: #fff3e0;
+        transform: rotateY(180deg);
     }
 }
 
-div.keyDefinition{
+
+
+div.productCatagorySelector{
     margin: 20px;
     background-color: #fff3e0;
 
-    dl {
+    ol {
+        list-style: none;
         padding: 20px;
         display: flex;
-        justify-content: space-between;
-    }
-    
-    div dt {
-        font-weight: bold;
-    }
-    
-    div dt, div dd {
-        margin: 0;
-        padding: 0;
-    }
-    
-    @media screen and (max-width: 400px) {
-        dl {
-            flex-direction: column;
+        justify-content: space-evenly;
+
+        li {
+            border: solid #5a3e2b 2px;
+            border-radius: 50px;
+            padding: 15px;
+
+            a {
+                text-decoration: none;
+                color: #000;
+            }
         }
-        div dl div {
-            padding: 1em 1em 0 1em;
+
+        .currentProductPage {
+            background-color: #5a3e2b;
+            
+            a {
+                color: white;
+            }
         }
-        
+    }
+    
+
+    
+    @media screen and (max-width: 600px) {
+
+
+            ol {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                gap: 10px;
+            }
+
     }
 }
 
@@ -81,7 +134,7 @@ p, h2, table, th, td{
 
 body{
     min-height: 100vh;
-    background-color: #ffffff;
+    background-color: #fff3e0;
 }
 
 .productButton {
@@ -107,9 +160,14 @@ div.productCardContainter{
     grid-gap: 20px;
 }
 
+.productButton {
+    background-color: #fff3e0;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
 div.productCard {
-    aspect-ratio: 1/1;
-    background-blend-mode: normal;
+    aspect-ratio: 1;
     background-size: cover;
     background-position: center;
     border-radius: 10px;
@@ -125,48 +183,46 @@ div.productCard {
     background-blend-mode: darken;
     border-radius: 10px;
 
-    transition: all 0.5s;
+    transition: background-color 0.5s;
 
     table, th, td {
-        width: auto;
+        width: fit-content;
         margin: 0 auto;
         border: 1px solid white;
         border-collapse: collapse;
         padding: 10px;
-    }
-    
-    th, td {
-        width: 50%;
         text-align: center;
     }
-
-
 }
 
 
 
 .productButton:hover {
     .productCard {
-        transition: all 0.5s;
+        transition: background-color 0.5s;
         background-color: rgba(0, 0, 0, 0);
 
         h2, table, tr, th, td {
-            transition: all 0.5s;
+            transition: opacity 0.5s;
             opacity: 0;
         }
+
     }
+
 }
 
+
+
+
 .productButton:active {
+    transform-style: flat;
+
+
     .productCard {
-        transform-style: preserve-3d;
-        position: fixed;
-    
-        aspect-ratio: 1;
+        position:fixed;
 
-        max-width: 100vh;
-        max-height: 100vw;
-
+        width: min(80vw, 80vh);
+        height: min(80vw, 80vh);
 
         top: 50%;
         left: 50%;
@@ -174,7 +230,7 @@ div.productCard {
 
         z-index: 2;
 
-
+        transition: width 0.5s;
     }
 }
 
@@ -193,13 +249,44 @@ div.productCard {
 }
 
 
-#AerocanoCard {
-    background-image: url("Coffee/Aerocano.jpeg");
-}
+#Americano{background-image: url("Coffee/Americano.jpg");}
+#Latte{background-image: url("Coffee/Latte.jpg");}
+#Cappuccino{background-image: url("Coffee/Cappuccino.jpeg");}
+#Aerocano{background-image: url("Coffee/Aerocano.jpeg");}
+#Aero-latte{background-image: url("Coffee/Aero-latte.jpg");}
 
-#CappucinoColdFoamCard {
-    background-image: url("Coffee/Cappuccino\ Cold\ foam.jpeg");
-}
+#ButterscotchLatte{background-image: url("Coffee/Butterscotch latte.jpeg");}
+#ButterscotchCreme{background-image: url("Coffee/ButterscotchCreme.jpg");}
+#MintLatte{background-image: url("Coffee/MintLatte.jpg");}
+#ViennaLatte{background-image: url("Coffee/Vienna latte.jpeg");}
+#PistachioLatte{background-image: url("Coffee/Pistachio Latte.jpeg");}
+#StrawberryLatte{background-image: url("Coffee/strawberry latte.jpeg");}
+#Mocha{background-image: url("Coffee/mocha.jpeg");}
+#MintMocha{background-image: url("Coffee/MintMocha.jpg");}
+#OrangeMocha{background-image: url("Coffee/Orange mocha.jpeg");}
+#YuzuAmericano{background-image: url("Coffee/Yuzu Americano.jpeg");}
+#CheeseAmericano{background-image: url("Coffee/Cheese Americano.jpeg");}
+#OrangeAmericano{background-image: url("Coffee/OrangeAmericano.jpg");}
+#ExtraEspressoShot{background-image: url("Coffee/ExtraEspressoShot.jpg");}
+
+#Chocolate{background-image: url("Coffee/Chocolate.jpg");}
+#MintChocolate{background-image: url("Coffee/MintChocolate.jpg");}
+#OrangeChocolate{background-image: url("Coffee/OrangeChocolate.jpg");}
+#YuzuSoda{background-image: url("Coffee/YuzuSoda.jpg");}
+#StrawberrySoda{background-image: url("Coffee/StrawberrySoda.jpg");}
+#YuzuCheese{background-image: url("Coffee/YuzuCheese.jpg");}
+#YuriMatcha{background-image: url("Coffee/Matcha Latte.jpeg");}
+#StrawberryMatcha{background-image: url("Coffee/StrawberryMatcha.jpg");}
+#YuzuMatcha{background-image: url("Coffee/YuzuMatcha.jpg");}
+#Houjicha{background-image: url("Coffee/Houjicha.jpg");}
+
+#HotAmericano{background-image: url("Coffee/Americano.jpg");}
+#HotLatte{background-image: url("Coffee/Latte.jpg");}
+#HotButterscotchLatte{background-image: url("Coffee/Butterscotch latte.jpeg");}
+#HotCappuccino{background-image: url("Coffee/Cappuccino.jpeg");}
+#HotChocolate{background-image: url("Coffee/Chocolate.jpg");}
+#HotYuriMatcha{background-image: url("Coffee/Matcha Latte.jpeg");}
+#HotHoujicha{background-image: url("Coffee/Houjicha.jpg");}
 
 
 

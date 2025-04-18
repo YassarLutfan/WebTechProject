@@ -905,11 +905,11 @@ dl dd {
 
 
 
-figure {
+/*figure {
     img{
         border-radius: 50%;
     }
-}
+}*/ /* <-- this breaks Activity */
 
 div.productCatagorySelector{
     margin: 20px;

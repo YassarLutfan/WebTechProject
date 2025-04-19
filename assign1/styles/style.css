@@ -866,6 +866,8 @@ dl dd {
     }
 }
 /* Forms */
+
+/* The following CSS creates a box with a drop-shadow that contains the elements within the web-page. */
 .form-section {
     padding: 1.5rem 2rem 2rem;
     background-color: var(--accent-color);
@@ -877,12 +879,81 @@ dl dd {
     border-radius: 0.5rem;
     margin: 10px 1.5rem 1.5rem;
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    overflow: auto;
 }
-  
-.center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+/* The following CSS is for formatting text within the web-page. */
+.form-section h1 {
+    padding: 0.5em;
+}
+
+.form-section aside {
+    vertical-align: center;
+    text-align: center;
+    background-color: var(--color-1);
+    color: var(--accent-color);
+    width: 30%;
+    float: right;
+}
+
+.form-section aside p {
+    padding: 0.25em;
+}
+
+.form-section a {
+    color: var(--accent-color);
+    text-align: center;
+}
+
+.form-section svg {
+    max-width: 24px;
+    vertical-align: bottom;
+}
+
+.form-section select, input[type="submit"], input[type="reset"] {
+    color: var(--accent-color);
+    background-color: var(--color-1);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0.25em;
+}
+
+.form-section input, .form-section select {
+    margin-top: 0.25em;
+}
+
+.form-section input[type="text"], input[type="email"], input[type="tel"], input[type="password"] {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 2em;
+    width: 20em;
+}
+
+.form-section input[type="textarea"] {
+    width: 60%;
+    height: 100px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.form-section img {
+    border: 5px double var(--accent-color);
+}
+
+.form-choice-section {
+    background-color: var(--color-1);
+    color: var(--accent-color);
+    margin: 0 auto;
+    max-width: 20%;
+}
+
+/* Configuration from Google Fonts */
+/* https://fonts.google.com/icons?selected=Material+Symbols+Outlined:mail:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=mail&icon.size=24&icon.color=%23e3e3e3 */
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+    vertical-align: bottom;
 }
 
 /* Products */

@@ -46,37 +46,36 @@
         </div>
     </nav>
 
-    <h2 class="center">Join us!</h2>
-    <p class="center">If you want to join our team of brewmasters, fill in your details below.</p>
+
 
     <section class="form-section">
-      <form method="post" class='center'> <!-- action="login I guess" -->
+        <h1>Join us!</h1>
+        <p>If you want to join our team of brewmasters, fill in your details below.</p>
+      <form method="post"> <!-- action="login I guess" -->
                   <fieldset>
                       <legend>Details</legend>
-                      <p>
                           <label for="firstName">First Name</label><br>
                           <input type="text" name="firstName" id="firstName" required="required" pattern="[a-zA-Z]+" maxlength="25" placeholder="John">
-                      </p>
                       <p>
-                          <label for="lastName">Last Name</label><br>
+                          <label for="lastName">Last Name </label><br>
                           <input type="text" name="lastName" id="lastName" required="required" pattern="[a-zA-Z]+" maxlength="25" placeholder="Doe">
                       </p>
                       <p>
-                          <label for="email">E-mail Address</label><br>
+                          <label for="email">E-mail Address </label><br>
                           <input type="email" name="email" id="email" required="required" placeholder="example@example.com">
                       </p>
                       <fieldset>
                           <legend>Address</legend>
                           <p>
-                              <label for="addressStreet">Address</label><br>
+                              <label for="addressStreet">Address </label><br>
                               <input type="text" name="firstName" id="firstName" required="required" maxlength="40" placeholder="Address line 1 & 2">
                           </p>
                           <p>
-                              <label for="addressCity">City</label><br>
+                              <label for="addressCity">City </label><br>
                               <input type="text" name="firstName" id="firstName" required="required" maxlength="20" placeholder="Kuching">
                           </p>
                           <p>
-                              <label for="addressState">State</label><br>
+                              <label for="addressState">State </label><br>
                               <select name="addressState" id="addressState" required="required">
                                   <option value="">Choose one...</option>
                                   <!-- The values are the state's area codes, also, specification requires Federal Territories as well -->
@@ -99,27 +98,31 @@
                               </select>
                           </p>
                           <p>
-                              <label for="addressPostcode">Postcode</label><br>
+                              <label for="addressPostcode">Postcode </label><br>
                               <input type="number" name="addressPostcode" id="addressPostcode" required="required" max="99999" min="0" placeholder="00000">
                           </p>
                       </fieldset>
                       <p>
-                          <label for="ageRange">Age Range</label><br>
-                          <input type="radio" name="ageRange" id="19-" required="required">19-
-                          <input type="radio" name="ageRange" id="20-30">20-30
-                          <input type="radio" name="ageRange" id="31-40">31-40
-                          <input type="radio" name="ageRange" id="41+">41+
+                          <label for="ageRange">Age Range </label>
+                          <section class="form-choice-section">
+                            <input type="radio" name="ageRange" id="19-" required="required">19-
+                            <input type="radio" name="ageRange" id="20-30">20-30
+                            <input type="radio" name="ageRange" id="31-40">31-40
+                            <input type="radio" name="ageRange" id="41+">41+
+                          </section>
                       </p>
 
                       <p>
-                          <label for="languages">Languages Spoken</label><br>
+                          <label for="languages">Languages Spoken </label>
+                          <section class="form-choice-section">
                           <input type="checkbox" name="english" id="english">English
                           <input type="checkbox" name="malay" id="malay">Malay
                           <input type="checkbox" name="chinese" id="chinese">中文
+                          </section>
                       </p>
 
                       <p>
-                          <label for="position">Desired Job</label><br>
+                          <label for="position">Desired Job </label><br>
                           <select name="position" id="position" required="required">
                               <option value="">Choose one...</option>
                               <option value="barista">Barista</option>
@@ -130,13 +133,17 @@
                       </p>
                       <p>
                           <label for="resume">Attach your resume</label><br>
+                          <section class="form-choice-section">
                           Attached file:
                           <input type="file" name="resume" id="resume" accept=".doc, .docx, .pdf">
+                          </section>
                       </p>
                       <p>
                           <label for="appearance">Attach an image of yourself</label><br>
+                          <section class="form-choice-section">
                           Attached file:
                           <input type="file" name="appearance" id="appearance" accept="image/*"> <!-- There is no way, to my knowledge, of capping this to 200Kbs without the use of Javascript -->
+                          </section>
                       </p>
                       <input type="submit" value="Submit">
                       <input type="reset" value="Reset">

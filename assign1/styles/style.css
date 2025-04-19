@@ -1375,6 +1375,7 @@ div.productCard {
 
   .Enhancement a {
     display: inline-block;
+    word-wrap: break-word;
     margin-top: 0.8rem;
     color: var(--color-1);
     text-decoration: none;

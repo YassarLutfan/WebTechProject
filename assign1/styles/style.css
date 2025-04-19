@@ -1338,6 +1338,7 @@ div.productCard {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: var(--color-1);
+    animation: fadeInUpNav 0.7s ease forwards;
   }
 
   .Enhancement h1 {

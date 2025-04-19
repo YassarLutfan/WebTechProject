@@ -6,7 +6,7 @@
     --accent-color:#fff3e0;
 }
 
-html, body {
+html, .smart-footer {
     height: 100%;
 }
 

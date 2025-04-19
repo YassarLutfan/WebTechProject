@@ -5,7 +5,7 @@
     <link rel="shortcut icon" type="image/jpeg" href="images/Brewngocircle.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enquiry</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=mail" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=mail">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
@@ -53,7 +53,7 @@
     <h1>Have a question?</h1>
     <p>For questions, comments, and business opportunities, please contact us through the form below.</p>
     <aside class="form-section">
-      <h1> We're here to help! </h1>
+      <h2> We're here to help! </h2>
       <p> Whether you have a question or a helpful comment for us, we'll do our best to read every comment you leave us! </p><br>
       <p> You can also get in touch with us via the following mediums: </p><br>
       <a href="https://www.facebook.com/profile.php?id=61554234958482"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001 2C6.47813 2 2.00098 6.47715 2.00098 12C2.00098 16.9913 5.65783 21.1283 10.4385 21.8785V14.8906H7.89941V12H10.4385V9.79688C10.4385 7.29063 11.9314 5.90625 14.2156 5.90625C15.3097 5.90625 16.4541 6.10156 16.4541 6.10156V8.5625H15.1931C13.9509 8.5625 13.5635 9.33334 13.5635 10.1242V12H16.3369L15.8936 14.8906H13.5635V21.8785C18.3441 21.1283 22.001 16.9913 22.001 12C22.001 6.47715 17.5238 2 12.001 2Z"></path></svg>Facebook </a><br>
@@ -80,11 +80,11 @@
                           <legend>Address</legend>
                           <p>
                               <label for="addressStreet">Address </label><br>
-                              <input type="text" name="firstName" id="firstName" required="required" maxlength="40" placeholder="Address line 1 & 2">
+                              <input type="text" name="addressStreet" id="addressStreet" required="required" maxlength="40" placeholder="Address line 1 & 2">
                           </p>
                           <p>
                               <label for="addressCity">City </label><br>
-                              <input type="text" name="firstName" id="firstName" required="required" maxlength="20" placeholder="Kuching">
+                              <input type="text" name="addressCity" id="addressCity" required="required" maxlength="20" placeholder="Kuching">
                           </p>
                           <p>
                               <label for="addressState">State </label><br>
@@ -116,7 +116,7 @@
                       </fieldset>
                       <p>
                           <label for="phoneNumber">Phone Number</label><br>
-                          <input type="tel" name="phoneNumber" id="phonenumber" required="required" maxlength="10" placeholder="0144687219">
+                          <input type="tel" name="phoneNumber" id="phoneNumber" required="required" maxlength="10" placeholder="0144687219">
                       </p>
                       <p>
                               <label for="enquiry">Enquiry Type</label><br>
@@ -131,7 +131,7 @@
                               </select>
                       </p>
                               <label for="enquiryText">Enquiry</label><br>
-                              <input type="textarea" name="enquiryText" id="enquiryText" required="required" rows="4" cols="100" placeholder="What's on your mind?"><br>
+                              <textarea name="enquiryText" id="enquiryText" required="required" rows="4" cols="100" placeholder="What's on your mind?"></textarea><br>
                               <input type="submit" value="Submit">
                               <input type="reset" value="Reset">
                   </fieldset>

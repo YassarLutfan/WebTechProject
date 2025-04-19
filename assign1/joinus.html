@@ -69,11 +69,11 @@
                           <legend>Address</legend>
                           <p>
                               <label for="addressStreet">Address </label><br>
-                              <input type="text" name="firstName" id="firstName" required="required" maxlength="40" placeholder="Address line 1 & 2">
+                              <input type="text" name="addressStreet" id="addressStreet" required="required" maxlength="40" placeholder="Address line 1 & 2">
                           </p>
                           <p>
                               <label for="addressCity">City </label><br>
-                              <input type="text" name="firstName" id="firstName" required="required" maxlength="20" placeholder="Kuching">
+                              <input type="text" name="addressCity" id="addressCity" required="required" maxlength="20" placeholder="Kuching">
                           </p>
                           <p>
                               <label for="addressState">State </label><br>
@@ -103,24 +103,20 @@
                               <input type="number" name="addressPostcode" id="addressPostcode" required="required" max="99999" min="0" placeholder="00000">
                           </p>
                       </fieldset>
-                      <p>
                           <label for="ageRange">Age Range </label>
-                          <section class="form-choice-section">
-                            <input type="radio" name="ageRange" id="19-" required="required">19-
-                            <input type="radio" name="ageRange" id="20-30">20-30
-                            <input type="radio" name="ageRange" id="31-40">31-40
-                            <input type="radio" name="ageRange" id="41+">41+
-                          </section>
-                      </p>
+                          <div class="form-choice-section">
+                            <input type="radio" name="ageRange" id="ageRange" value="19-" required="required">19-
+                            <input type="radio" name="ageRange" value="20-30">20-30
+                            <input type="radio" name="ageRange" value="31-40">31-40
+                            <input type="radio" name="ageRange" value="41+">41+
+                          </div>
 
-                      <p>
                           <label for="languages">Languages Spoken </label>
-                          <section class="form-choice-section">
-                          <input type="checkbox" name="english" id="english">English
-                          <input type="checkbox" name="malay" id="malay">Malay
-                          <input type="checkbox" name="chinese" id="chinese">中文
-                          </section>
-                      </p>
+                          <div class="form-choice-section">
+                          <input type="checkbox" name="english" id="languages" value="english">English
+                          <input type="checkbox" name="malay" value="malay">Malay
+                          <input type="checkbox" name="chinese" value="chinese">中文
+                          </div>
 
                       <p>
                           <label for="position">Desired Job </label><br>
@@ -132,20 +128,16 @@
                               <option value="Other">Other</option>
                           </select>
                       </p>
-                      <p>
                           <label for="resume">Attach your resume</label><br>
-                          <section class="form-choice-section">
+                          <div class="form-choice-section">
                           Attached file:
                           <input type="file" name="resume" id="resume" accept=".doc, .docx, .pdf">
-                          </section>
-                      </p>
-                      <p>
+                          </div>
                           <label for="appearance">Attach an image of yourself</label><br>
-                          <section class="form-choice-section">
+                          <div class="form-choice-section">
                           Attached file:
                           <input type="file" name="appearance" id="appearance" accept="image/*"> <!-- There is no way, to my knowledge, of capping this to 200Kbs without the use of Javascript -->
-                          </section>
-                      </p>
+                          </div>
                   </fieldset>
                   <input type="submit" value="Submit">
                   <input type="reset" value="Reset">

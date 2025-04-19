@@ -887,27 +887,33 @@ dl dd {
 
 /* Products */
 
+/*setting the page to use no margin and padding*/
 *{
     margin: 0;
     padding: 0;
 }
 
 .topBanner {
+    /*making it responsive*/
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    /*basic styling*/
     padding: 10px;
     margin: 20px;
     border-radius: 10px;
     background-color: #fff3e0;
     height: auto;
 
-    animation: fadeInUpNav 0.7s ease forwards;
+    animation: fadeInUpNav 0.7s ease forwards; /*little animation to make it look nice*/
 
+    /*make the title bigger*/
     h1.productCatagory{
         font-size: 2em;
     }
 
+    /*setting the size and making it a round image*/
     figure {
         img{
             height: 100px;
@@ -917,11 +923,13 @@ dl dd {
     }
 
     aside {
+        /*basic styling for the aside*/
         float: right;
         width: fit-content;
         height: fit-content;
         margin: 10px;
     
+        /*styling for the flipcard and flipcard contents*/
         .productKeyDefinitionFlipCard {
             background-color: transparent;
             perspective: 1000px; 
@@ -933,13 +941,13 @@ dl dd {
             position: relative;
             width: 100%;
             height: 100%;
-            text-align: center;
-            transition: transform 0.5s;
-            transform-style: preserve-3d;
+            text-align: center; 
+            transition: transform 0.5s; 
+            transform-style: preserve-3d; 
         }
         
         .productKeyDefinitionFlipCard:hover .productKeyDefinitionFlipCardInner {
-            transform: rotateY(180deg);
+            transform: rotateY(180deg); /
         }
         
         .productKeyDefinitionFlipCardFront, .productKeyDefinitionFlipCardBack {
@@ -962,6 +970,8 @@ dl dd {
             color: #fff3e0;
             transform: rotateY(180deg);
 
+
+            /*setting margin to auto so that can fit within the small box*/
             dl {
                 margin: auto;
 
@@ -983,27 +993,29 @@ dl dd {
 
 
 div.productCatagorySelector{
+    /*basic styling for this section with a little animation*/
     margin: 20px;
     background-color: #fff3e0;
-
     animation: fadeInUpNav 0.7s ease forwards;
 
     ol {
-        list-style: none;
+        list-style: none; /*get rid of the numbering*/
         padding: 20px;
+        /*having the buttons be spaced evenly so that there's no need for padding or margin*/
         display: flex;
         justify-content: space-evenly;
 
         li {
             a {
-                display: block;
-                text-decoration: none;
+                display: block; /*for having the whole thing be clickable instead of only the words*/
+                text-decoration: none; /*get rid of the underline*/
+                /*basic styling to make it look like a button*/
                 border: solid #5a3e2b 2px;
                 border-radius: 50px;
                 padding: 15px;
                 color: #000;
-                transform: translateY 0.5s;
 
+                /*little animation for when hover over the button*/
                 &:hover {
                     transform: translateY(-5px);
                     transition: transform 0.5s;
@@ -1012,6 +1024,7 @@ div.productCatagorySelector{
             }
         }
 
+        /*basic styling to show that the current page you are on is highlighted*/
         .currentProductPage {
             border: solid #5a3e2b 2px;
             background-color: #5a3e2b;
@@ -1023,7 +1036,7 @@ div.productCatagorySelector{
     }
 
 
-
+    /*makes it so when the screen gets too small and the buttons are about to touch, they will become vertically aligned instead of horizontal*/
     @media screen and (max-width: 600px) {
 
 
@@ -1038,14 +1051,23 @@ div.productCatagorySelector{
 }
 
 .productButton {
+    /*basic styling for the product button*/
     border-style: none;
     aspect-ratio: 1;
     background-blend-mode: normal;
     background-size: cover;
     background-position: center;
     border-radius: 10px;
+
+    /*making it same colour as background so that when card is clicked on the space left behind wouldn't be different colour*/
+    background-color: #fff3e0;
+    
+    /*making the thing when hovered over be reletive to the product button*/
+    position: relative;     
+    transform-style: preserve-3d;
 }
 
+/*basic styling for the section*/
 div.productCardSection{
     padding: 20px;
     margin: 20px;
@@ -1053,6 +1075,7 @@ div.productCardSection{
     background-color: #fff3e0;
 }
 
+/*styling for a responsive grid*/
 div.productCardContainter{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -1060,18 +1083,14 @@ div.productCardContainter{
     grid-gap: 20px;
 }
 
-.productButton {
-    background-color: #fff3e0;
-    position: relative;
-    transform-style: preserve-3d;
-}
-
 div.productCard {
+    /*setting up the basic design of the product card*/
     aspect-ratio: 1;
     background-size: cover;
     background-position: center;
     border-radius: 10px;
 
+    /*making sure contents are centered and has suitable space in-between*/
     width: 100%;
     height: 100%;
     display: flex;
@@ -1079,16 +1098,21 @@ div.productCard {
     gap: 20px;
     justify-content: center;
     align-items: center;
+
+    /*makes the image darken when not being hovered over*/
     background-color: rgba(0, 0, 0, 0.6);
     background-blend-mode: darken;
     border-radius: 10px;
 
+    /*little animation to make it look nicer*/
     transition: background-color 0.5s;
 
     .productName {
+        /*specifying white so thatb can see easier on dark background*/
         color: white;
     }
 
+    /*styling for table to make it look white and have proper border and centered text*/
     table, th, td {
         width: fit-content;
         margin: 0 auto;
@@ -1106,7 +1130,7 @@ div.productCard {
 }
 
 
-
+/*when hover on the card makes it so that the darken effect is removed and the wordings and table also removed*/
 .productButton:hover {
     .productCard {
         transition: background-color 0.5s;
@@ -1123,42 +1147,51 @@ div.productCard {
 
 
 
-
+/*when clicked will make the image of the product bigger to be able to more easily see*/
 .productButton:active {
+    /*changing back to flat in order for the product card to be reletive to the viewport*/
     transform-style: flat;
 
 
     .productCard {
+        /*fixed to viewport*/
         position:fixed;
 
+        /*making the image be bigger while still maintaining 1/1 aspect ratio (basically square image) while still having a gap between the image and edge of screen by using the min function to get the smaller value between the view height and view width so that responsive design is still preserved*/
         width: min(80vw, 80vh);
         height: min(80vw, 80vh);
 
+        /*centering the image to the viewport*/
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
 
+        /*making the image the most front so it won't be affected by the blur and darking of the ::after element*/
         z-index: 2;
 
+        /*little animation to make it look nicer*/ 
         transition: width 0.5s;
     }
 }
 
-
+/*creates a black slightly opaque rectangle which is bigger than the display size and covers the background blurring it when clicked.*/
 .productButton:active::after {
+    /*having the content be empty and be fixed to the viewport*/
     content: '';
     position: fixed;
+    /*needs to be slightly bigger and going past the boundary of the viewport in order for the blur to work properly otherwise there will be lighter around the edges of the view port*/
     top: -5vh;
     left: -5vw;
-    z-index: 1;
+    width: 110vw;
+    height: 110vh;
+    z-index: 1;     /*covers the background is still below the product card*/
+    /*makes the rectangle black, slightly opaque, and blurry*/
     background-color: rgba(0, 0, 0, 0.6);
     filter: blur(5px);
     backdrop-filter: blur(5px);
-    width: 110vw;
-    height: 110vh;
 }
 
-
+/*Assigning the images for the id which corresponds to the product card*/
 #Americano{background-image: url("images/Americano.jpg");}
 #Latte{background-image: url("images/Latte.jpg");}
 #Cappuccino{background-image: url("images/Cappuccino.jpeg");}

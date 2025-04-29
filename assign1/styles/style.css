@@ -961,6 +961,10 @@ dl dd {
     vertical-align: top;
 }
 
+.form-section input[type=number] {
+    -moz-appearance: textfield;
+}
+
 .form-section img {
     border: 5px double var(--accent-color);
 }

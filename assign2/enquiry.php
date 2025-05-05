@@ -61,7 +61,8 @@
       <a href="mailto:brewngo.coffee@gmail.com"><span class="material-symbols-outlined">mail</span>brewngo.coffee@gmail.com</a><br>
       <p>Phone Number: 011-1653 1886</p>
     </aside>
-    <form method="post"> <!-- action="login I guess" -->
+    <form action="form_handling.php" method="POST">
+                  <input type="hidden" id="formName" name="formName" value="enquiry">
                   <fieldset>
                       <legend>Details</legend>
                       <p>

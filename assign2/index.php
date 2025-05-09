@@ -9,7 +9,10 @@
 </head>
 <body>
     
-  <?php include('./view/navigation.php'); ?>
+  <?php 
+    include('./view/navigation.php');
+    include('./view/initdb.php');
+  ?>
 
     <div class="container">
         <div class="slider-wrapper">

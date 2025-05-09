@@ -46,7 +46,7 @@ if (!$conn) {
     street_adress VARCHAR(50),
     city VARCHAR(50),
     malaysia_state VARCHAR(50),
-    postcode VARCHAR(50),
+    postcode INT(5),
     enquiry_type VARCHAR(50),
     enquiry VARCHAR(5000),
 	reg_date TIMESTAMP
@@ -83,11 +83,11 @@ $sql = "CREATE TABLE IF NOT EXISTS join_us (
 	first_name VARCHAR(30) NOT NULL,
 	last_name VARCHAR(30) NOT NULL,
 	email VARCHAR(50),
-    phone_number VARCHAR(50),
+    phone_number INT(12),
     street_adress VARCHAR(50),
     city VARCHAR(50),
     malaysia_state VARCHAR(50),
-    postcode VARCHAR(50),
+    postcode INT(5),
 	reg_date TIMESTAMP
 	)";
 

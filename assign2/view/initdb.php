@@ -47,7 +47,7 @@ if (!$conn) {
     city VARCHAR(50),
     malaysia_state VARCHAR(50),
     postcode INT(5),
-    phone_number INT(15),
+    phone_number VARCHAR(15),
     enquiry_type VARCHAR(50),
     enquiry VARCHAR(5000),
 	reg_date TIMESTAMP
@@ -111,8 +111,14 @@ if (mysqli_query($conn, $sql)) {
     echo "Error creating table: " . mysqli_error($conn);
 }
 
-$sql = "INSERT INTO users (id, username, user_password)
-SELECT (NULL, 'admin', 'admin') IF NOT EXISTS (SELECT 1 FROM users WHERE username = 'admin')";
+$sql = "INSERT IGNORE INTO users (id, username, user_password) 
+    VALUES ('1', 'admin', 'admin')";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Table users created successfully";
+} else {
+    echo "Error creating table: " . mysqli_error($conn);
+}
 
 mysqli_close($conn);
 ?>

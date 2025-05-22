@@ -10,8 +10,8 @@
 <body>
     
   <?php 
-    include('./view/navigation.php');
     include('./view/initdb.php');
+    include('./view/navigation.php');
   ?>
 
     <div class="container">

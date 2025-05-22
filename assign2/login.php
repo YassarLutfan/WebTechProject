@@ -9,7 +9,69 @@
 </head>
 <body class="smart-footer">
 
-<?php include('./view/navigation.php'); ?>
+<?php
+session_start();
+if(isset($_SESSION['user_id']))
+{
+	unset($_SESSION['user_id']);
+
+}
+session_destroy();
+
+include('./view/navigation.php');
+?>
+<?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "BrewNGo";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password,$dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+if($_SERVER['REQUEST_METHOD'] == "POST")
+	{
+		//something was posted
+		$user_name = $_POST['loginID'];
+		$password = $_POST['loginPassword'];
+
+		if(!empty($user_name) && !empty($password))
+		{
+
+			//read from database
+			$query = "select * from users where username = '$user_name' limit 1";
+			$result = mysqli_query($conn, $query);
+
+			if($result)
+			{
+				if($result && mysqli_num_rows($result) > 0)
+				{
+
+					$user_data = mysqli_fetch_assoc($result);
+					
+					if($user_data['user_password'] === $password)
+					{
+
+						$_SESSION['id'] = $user_data['id'];
+						header("Location: index.php");
+						die;
+					}
+				}
+			}
+			
+			echo "wrong username or password!";
+		}else
+		{
+			echo "wrong username or password!";
+		}
+	}
+
+?>
 
     <section class="form-section">
     <h1>Log In</h1>

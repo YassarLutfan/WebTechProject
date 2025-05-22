@@ -1,3 +1,39 @@
+<?php
+    session_start();
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "BrewNGo";
+
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password,$dbname);
+    // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    function check_login($conn)
+{
+
+	if(isset($_SESSION['id']))
+	{
+
+		$id = $_SESSION['id'];
+		$query = "select * from users where id = '$id' limit 1";
+
+		$result = mysqli_query($conn,$query);
+		if($result && mysqli_num_rows($result) > 0)
+		{
+
+			$user_data = mysqli_fetch_assoc($result);
+			return $user_data;
+		}
+	}
+}
+
+    $user_data = check_login($conn);
+?>
+
 <nav>
         <input type="checkbox" id="sidebar-active">
         <label for="sidebar-active" class="open-sidebar-button">
@@ -32,6 +68,14 @@
             <a href="enquiry.php">Enquiry</a>
             <a href="registration.php">Membership</a>
             <a href="findalocation.php">Find A Store</a>
-            <a href="login.php">Login</a>
+            <?php
+            if(isset($_SESSION['id'])) {
+                echo"<a href='#'>Welcome " . $user_data['username'] . "</a>";
+                echo"<a href='login.php'>Log Out</a>";
+            } else {
+               echo"<a href='login.php'>Login</a>";
+            }
+
+            ?>
         </div>
     </nav>

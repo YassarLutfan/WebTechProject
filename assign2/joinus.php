@@ -14,8 +14,9 @@
     <section class="form-section">
         <h1>Join us!</h1>
         <p>If you want to join our team of brewmasters, fill in your details below.</p>
-      <form method="post"> <!-- action="login I guess" -->
+      <form action="confirm.php" method="post" enctype="multipart/form-data"> <!-- action="login I guess" -->
                   <fieldset>
+                      <input type="hidden" id="formName" name="formName" value="joinus">
                       <legend>Details</legend>
                           <label for="firstName">First Name</label><br>
                           <input type="text" name="firstName" id="firstName" required="required" pattern="[a-zA-Z]+" maxlength="25" placeholder="John">

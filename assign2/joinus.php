@@ -14,7 +14,7 @@
     <section class="form-section">
         <h1>Join us!</h1>
         <p>If you want to join our team of brewmasters, fill in your details below.</p>
-      <form action="confirm.php" method="post" enctype="multipart/form-data"> <!-- action="login I guess" -->
+      <form action="joinusconfirm.php" method="post" enctype="multipart/form-data"> <!-- action="login I guess" -->
                   <fieldset>
                       <input type="hidden" id="formName" name="formName" value="joinus">
                       <legend>Details</legend>

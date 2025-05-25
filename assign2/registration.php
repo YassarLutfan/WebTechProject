@@ -24,7 +24,7 @@
       <h2> Not what you're looking for? </h2>
       <a href='login.html'><p>I already have an account.</p></a>
     </aside>
-      <form action="confirm.php" method="post">
+      <form action="registerconfirm.php" method="post">
                   <input type="hidden" id="formName" name="formName" value="membership">
                   <fieldset>
                       <legend>Details</legend>

@@ -42,9 +42,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 
 		if(!empty($user_name) && !empty($password))
 		{
+            $user_name_case_insen = strtolower($user_name);
+            $password_case_insen = strtolower($password);
 
 			//read from database
-			$query = "select * from users where username = '$user_name' limit 1";
+			$query = "SELECT * FROM users WHERE LOWER(username) = '$user_name_case_insen' limit 1";
 			$result = mysqli_query($conn, $query);
 
 			if($result)
@@ -54,12 +56,19 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 
 					$user_data = mysqli_fetch_assoc($result);
 					
-					if($user_data['user_password'] === $password)
+					if(strtolower($user_data['user_password']) === $password_case_insen)
 					{
 
 						$_SESSION['id'] = $user_data['id'];
-						header("Location: index.php");
-						die;
+
+                        if($user_data['username'] === 'admin') {
+                            header("Location: view_enquiry.php");
+                            die;
+                        } else {
+                            header("Location: index.php");
+                            die;
+                        }
+						
 					}
 				}
 			}

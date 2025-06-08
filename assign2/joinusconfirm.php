@@ -13,7 +13,7 @@
     // TODO CURRENTLY UNHANDLED!!!
     $resume    = $_FILES['resume'];
     $appearance = $_FILES['appearance'];
-}
+
 
 ?>
 

@@ -32,6 +32,7 @@
 }
 
     $user_data = check_login($conn);
+
 ?>
 
 <nav>

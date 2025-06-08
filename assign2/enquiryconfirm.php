@@ -1,6 +1,4 @@
 <?php
-//initialize form type
-$formName = $_POST['formName'];
 
 $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
@@ -47,8 +45,7 @@ $enquiryText = $_POST['enquiryText'];
             echo "<p><strong>Enquiry Text:</strong> $enquiryText</p>";
 
             // Corrected form action and hidden fields with PHP variables
-            echo "<form action=\"complete.php\" method=\"POST\">
-                <input type=\"hidden\" name=\"formName\" value=\"$formName\">
+            echo "<form action=\"enquiry_process.php\" method=\"POST\">
                 <input type=\"hidden\" name=\"firstName\" value=\"$firstName\">
                 <input type=\"hidden\" name=\"lastName\" value=\"$lastName\">
                 <input type=\"hidden\" name=\"email\" value=\"$email\">

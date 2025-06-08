@@ -1,6 +1,4 @@
 <?php
-//initialize form type
-$formName = $_POST['formName'];
 
     $firstName       = $_POST['firstName'];
     $lastName        = $_POST['lastName'];
@@ -49,8 +47,7 @@ $formName = $_POST['formName'];
             echo "<p><strong>State:</strong> $addressState</p>";
             echo "<p><strong>Postcode:</strong> $addressPostcode</p>";
 
-            echo "<form action=\"complete.php\" method=\"POST\">
-            <input type=\"hidden\" name=\"formName\" value=\"$formName\">
+            echo "<form action=\"joinus_process.php\" method=\"POST\">
             <input type=\"hidden\" name=\"firstName\" value=\"$firstName\">
             <input type=\"hidden\" name=\"lastName\" value=\"$lastName\">
             <input type=\"hidden\" name=\"email\" value=\"$email\">

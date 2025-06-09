@@ -1397,6 +1397,7 @@ div.productCard {
 
 /* view table */
 .viewtables {
+  display: flex;
   background-color: var(--accent-color);
   justify-content:flex-start;
 }

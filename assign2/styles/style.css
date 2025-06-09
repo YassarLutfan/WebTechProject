@@ -1396,37 +1396,32 @@ div.productCard {
 
 
 /* view table */
-
 .viewtables {
   background-color: var(--accent-color);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  box-sizing: border-box;
+  justify-content:flex-start;
 }
 
 
 .viewtable {
-  max-width: 1500px;
+  max-width: 1420px;
   padding: 2rem;
   width: 100%;
   animation: fadeInUpNav 0.7s ease forwards;
-  box-sizing: border-box;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-
-
-table {
+.viewtablecontainer table {
+    max-height: 5rem;
+    height: 100%;
     width: 100%;
     border-collapse: collapse;
     background: #fff;
     border-radius: 6px;
     overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 
-.button {
+.viewtables .button {
     display: inline-block;
     padding: 8px 16px;
     background-color: #007bff;
@@ -1437,57 +1432,47 @@ table {
     font-size: 14px;
   }
 
-.button:hover {
+.viewtables .button:hover {
     background-color: #0056b3;
 }
 
-.button.delete {
+.viewtables .button.delete {
     background-color: #dc3545;
 }
 
-.button.delete:hover {
+.viewtables .button.delete:hover {
     background-color: #a71d2a;
 }
 
-thead {
+.viewtables thead {
     background-color: var(--color-1);
     color: #fff;
 }
 
-thead th {
+.viewtables thead th {
     padding: 12px 10px;
     text-align: left;
     font-size: 14px;
 }
 
-tbody td {
+.viewtables tbody td {
     padding: 12px 10px;
     border-bottom: 1px solid #dee2e6;
     font-size: 14px;
     color: #333;
 }
 
-tbody tr:hover {
+.viewtables tbody tr:hover {
     background-color: #f1f3f5;
 }
 
-td:last-child {
+.viewtables td:last-child {
     white-space: nowrap;
-}
-
-@media (max-width: 768px) {
-    .viewtable {
-        padding: 1rem;
-    }
-
-    thead th, tbody td {
-        font-size: 13px;
-        padding: 8px 6px;
-    }
 }
 
 .viewtablecontainer{
     overflow-x: auto;
+    box-sizing: border-box;
 }
 
 /* new enquiry */

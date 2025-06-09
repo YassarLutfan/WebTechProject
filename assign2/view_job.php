@@ -1,19 +1,37 @@
 <?php
-// view_job.php
+    session_start();
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "BrewNGo";
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "BrewNGo";
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password,$dbname);
+    // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+    function check_login($conn)
+{
+
+	if(isset($_SESSION['id']))
+	{
+
+		$id = $_SESSION['id'];
+		$query = "select * from users where id = '$id' limit 1";
+
+		$result = mysqli_query($conn,$query);
+		if($result && mysqli_num_rows($result) > 0)
+		{
+
+			$user_data = mysqli_fetch_assoc($result);
+			return $user_data;
+		}
+	}
 }
 
-$sql = "SELECT * FROM joinus";  
-$result = mysqli_query($conn, $sql);
+    $user_data = check_login($conn);
 ?>
 
 <!DOCTYPE html>
@@ -21,54 +39,106 @@ $result = mysqli_query($conn, $sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Join Us Entries</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style.css?v=6">
+    <title>Job View</title>
 </head>
-<body>
+<nav>
+        <input type="checkbox" id="sidebar-active">
+        <label for="sidebar-active" class="open-sidebar-button">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e3e3e3"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+        </label>
 
-<?php include('./view/navigation.php'); ?>
+        <label id="overlay" for="sidebar-active"></label>
+        <div class="links-container">
+            <label for="sidebar-active" class="close-sidebar-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e3e3e3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </label>
+            <a class="home-link" href="view_user.php"><img class="logo" src="images/Brew&GoLogo.jpg" alt="logo"></a>
 
-<section class="form-section">
-    <h1>Join Us Entries</h1>
-    <?php if (mysqli_num_rows($result) > 0): ?>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Street</th>
-            <th>City</th>
-            <th>State</th>
-            <th>Postal Code</th>
-            <th>Resume</th>
-            <th>Profile Image</th>
-        </tr>
-        <?php while($row = mysqli_fetch_assoc($result)): ?>
-        <tr>
-            <td><?php echo htmlspecialchars($row['id']); ?></td>
-            <td><?php echo htmlspecialchars($row['firstName']); ?></td>
-            <td><?php echo htmlspecialchars($row['lastName']); ?></td>
-            <td><?php echo htmlspecialchars($row['email']); ?></td>
-            <td><?php echo htmlspecialchars($row['phoneNumber']); ?></td>
-            <td><?php echo htmlspecialchars($row['addressStreet']); ?></td>
-            <td><?php echo htmlspecialchars($row['addressCity']); ?></td>
-            <td><?php echo htmlspecialchars($row['addressState']); ?></td>
-            <td><?php echo htmlspecialchars($row['addressPostcode']); ?></td>
-            <td><a href="uploads/<?php echo urlencode($row['resume']); ?>" target="_blank">Download</a></td>
-            <td><a href="uploads/<?php echo urlencode($row['appearance']); ?>" target="_blank">View</a></td>
-        </tr>
-        <?php endwhile; ?>
-    </table>
-    <?php else: ?>
-        <p>No entries found.</p>
-    <?php endif; ?>
-</section>
+            <a href="view_user.php">User View</a>
+            <a href="view_job.php">Job View</a>
+            <a href="view_membership.php">Membership View</a>
+            <a href="view_enquiry.php">Enquiry View</a>
+            <?php
+            if(isset($_SESSION['id'])) {
+                echo"<a href='#'>Welcome " . $user_data['username'] . "</a>";
+                echo"<a href='login.php'>Log Out</a>";
+            } else {
+               echo"<a href='login.php'>Login</a>";
+            }
 
-<?php mysqli_close($conn); ?>
+            ?>
+        </div>
+    </nav>
 
-<?php include('./view/footer.php'); ?>
-<?php include('./view/backtotop.php'); ?>
+<body class ="viewtables">
+    <div class="viewtable">
+        <h2>List Of Job Applicants</h2>
+        <a class = "button" href="new_job.php" role="button">New Application</a>
+        <br>
+        <div class = "viewtablecontainer">
+        <table class = "table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Street Address</th>
+                    <th>City</th>
+                    <th>Malysia State</th>
+                    <th>Postcode</th>
+                    <th>Registration Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $dbname = "BrewNGo";
+
+                // Create connection
+                $conn = mysqli_connect($servername, $username, $password, $dbname);
+                if (!$conn) {
+                    die("Connection failed: " . mysqli_connect_error());
+                }
+
+                //read all row from db base table
+                $sql = "SELECT * FROM join_us";  
+                $result = mysqli_query($conn, $sql);
+
+                if(!$result){
+                    die("invalid query: " . $conn->error);
+                }
+
+                //read data of each row
+                while($row = $result->fetch_assoc()){
+                    echo"
+                    <tr>
+                        <td>$row[id]</td>
+                        <td>$row[first_name]</td>
+                        <td>$row[last_name]</td>
+                        <td>$row[email]</td>
+                        <td>$row[phone_number]</td>
+                        <td>$row[street_adress]</td>
+                        <td>$row[city]</td>
+                        <td>$row[malaysia_state]</td>
+                        <td>$row[postcode]</td>
+                        <td>$row[reg_date]</td>
+                    <td>
+                        <a class = 'button' href = 'editjob.php?id=$row[id]'>Edit</a>
+                        <a class = 'button delete' href = 'deletejob.php?id=$row[id]'>Delete</a>
+                    </td>
+                    </tr>
+                    ";
+                }
+                ?>
+            </tbody>
+        </table>
+        </div>
+    </div>
 </body>
 </html>

@@ -39,7 +39,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css?v=4">
+    <link rel="stylesheet" href="styles/style.css?v=6">
     <title>enquiryview</title>
 </head>
 <nav>
@@ -53,10 +53,11 @@
             <label for="sidebar-active" class="close-sidebar-button">
                 <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e3e3e3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
             </label>
-            <a class="home-link" href="index.php"><img class="logo" src="images/Brew&GoLogo.jpg" alt="logo"></a>
+            <a class="home-link" href="view_user.php"><img class="logo" src="images/Brew&GoLogo.jpg" alt="logo"></a>
 
-            <a href="enquiry.php">Job View</a>
-            <a href="registration.php">Membership View</a>
+            <a href="view_user.php">User View</a>
+            <a href="view_job.php">Job View</a>
+            <a href="view_membership.php">Membership View</a>
             <a href="view_enquiry.php">Enquiry View</a>
             <?php
             if(isset($_SESSION['id'])) {
@@ -132,8 +133,8 @@
                         <td>$row[enquiry]</td>
                         <td>$row[reg_date]</td>
                     <td>
-                        <a class = 'button' href = 'edit.php?id=$row[id]'>Edit</a>
-                        <a class = 'button delete' href = 'delete.php?id=$row[id]'>Delete</a>
+                        <a class = 'button' href = 'editenquiry.php?id=$row[id]'>Edit</a>
+                        <a class = 'button delete' href = 'deleteenquiry.php?id=$row[id]'>Delete</a>
                     </td>
                     </tr>
                     ";

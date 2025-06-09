@@ -40,7 +40,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css?v=2">
-    <title>Membership View</title>
+    <title>User View</title>
 </head>
 <nav>
         <input type="checkbox" id="sidebar-active">
@@ -73,20 +73,16 @@
 
 <body class ="viewtables">
     <div class="viewtable">
-        <h2>List Of Members</h2>
-        <a class = "button" href="new_membership.php" role="button">New Membership</a>
+        <h2>List Of Users</h2>
+        <a class = "button" href="new_user.php" role="button">New User</a>
         <br>
         <div class = "viewtablecontainer">
         <table class = "table">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th>Membership Username</th>
-                    <th>Membership Password</th>
-                    <th>Registration Date</th>
+                    <th>Username</th>
+                    <th>Password</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -104,7 +100,7 @@
                 }
 
                 //read all row from db base table
-                $sql = "SELECT * FROM membership";  
+                $sql = "SELECT * FROM users";  
                 $result = mysqli_query($conn, $sql);
 
                 if(!$result){
@@ -116,15 +112,11 @@
                     echo"
                     <tr>
                         <td>$row[id]</td>
-                        <td>$row[first_name]</td>
-                        <td>$row[last_name]</td>
-                        <td>$row[email]</td>
-                        <td>$row[membership_username]</td>
-                        <td>$row[membership_password]</td>
-                        <td>$row[reg_date]</td>
+                        <td>$row[username]</td>
+                        <td>$row[user_password]</td>
                     <td>
-                        <a class = 'button' href = 'editmembership.php?id=$row[id]'>Edit</a>
-                        <a class = 'button delete' href = 'deletemembership.php?id=$row[id]'>Delete</a>
+                        <a class = 'button' href = 'edituser.php?id=$row[id]'>Edit</a>
+                        <a class = 'button delete' href = 'deleteuser.php?id=$row[id]'>Delete</a>
                     </td>
                     </tr>
                     ";

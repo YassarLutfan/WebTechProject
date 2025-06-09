@@ -1404,9 +1404,9 @@ div.productCard {
 
 
 .viewtable {
-  max-width: 1470px;
+  max-width: auto;
   padding: 2rem;
-  width: 100%;
+  width: 95%;
   animation: fadeInUpNav 0.7s ease forwards;
 }
 
@@ -1584,3 +1584,4 @@ div.productCard {
     justify-content: flex-end;
     gap: 10px;
 }
+

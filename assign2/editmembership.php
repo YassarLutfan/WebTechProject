@@ -128,7 +128,7 @@ else{
             <div>
                 <label>Password</label>
                 <div>
-                    <input type = "password"  class = "form-control" name = "membership_password" required="required" pattern="[a-zA-Z]+" maxlength="25" value = "<?php echo $membership_password; ?>">
+                    <input type = "password"  class = "form-control" name = "membership_password" required="required" pattern="[a-zA-Z0-9]+" maxlength="25" value = "<?php echo $membership_password; ?>">
                 </div>
             </div>
             

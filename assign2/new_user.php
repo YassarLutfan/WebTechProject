@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             <div>
                 <label>Password</label>
                 <div>
-                    <input type = "password"  class = "form-control" name = "user_password" required="required" pattern="[a-zA-Z]+" maxlength="25" value = "<?php echo $user_password; ?>">
+                    <input type = "password"  class = "form-control" name = "user_password" required="required" pattern="[a-zA-Z0-9]+" maxlength="25" value = "<?php echo $user_password; ?>">
                 </div>
             </div>
             

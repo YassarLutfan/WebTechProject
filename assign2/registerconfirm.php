@@ -5,7 +5,7 @@
     $email = $_POST['email'];
     $loginID = $_POST['loginID'];
     $loginPassword = $_POST['loginPassword'];
-}
+
 
 ?>
 

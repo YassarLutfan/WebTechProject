@@ -112,7 +112,9 @@ if (mysqli_query($conn, $sql)) {
 }
 
 $sql = "INSERT IGNORE INTO users (id, username, user_password) 
-    VALUES ('1', 'admin', 'admin')";
+    VALUES ('1', 'admin', 'admin')
+    ON DUPLICATE KEY UPDATE
+    username = 'admin', user_password = 'admin'";
 
 if (mysqli_query($conn, $sql)) {
     echo "Table users created successfully";

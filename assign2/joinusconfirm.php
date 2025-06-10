@@ -19,11 +19,9 @@
 
     // move files to temp directory
     $temp_resume_file = $temp_dir . basename($_FILES["resume"]["name"]);
-    $temp_resume_file_type = strtolower(pathinfo($temp_resume_file, PATHINFO_EXTENSION));
     move_uploaded_file($_FILES["resume"]["tmp_name"], $temp_resume_file);
 
     $temp_image_file = $temp_dir . basename($_FILES["appearance"]["name"]);
-    $temp_image_file_type = strtolower(pathinfo($temp_image_file, PATHINFO_EXTENSION));
     move_uploaded_file($_FILES["appearance"]["tmp_name"], $temp_image_file);
 
 ?>
@@ -68,8 +66,14 @@
             <input type=\"hidden\" name=\"addressState\" value=\"$addressState\">
             <input type=\"hidden\" name=\"addressPostcode\" value=\"$addressPostcode\">
             <input type=\"hidden\" name=\"filepath\" value=\"$temp_dir\">";
+
+            if ($_FILES["appearance"]["size"] > 200000) {
+                echo "Sorry, your photo file is too large. Please try again.";
+                $uploadOk = 0;
+            } else {
+                echo "<input type=\"submit\" value=\"Confirm\">";
+            }
         ?>
-                <input type="submit" value="Confirm">
         </form>
 
     </section>

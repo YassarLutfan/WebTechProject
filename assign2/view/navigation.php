@@ -71,8 +71,13 @@
             <a href="findalocation.php">Find A Store</a>
             <?php
             if(isset($_SESSION['id'])) {
-                echo"<a href='#'>Welcome " . $user_data['username'] . "</a>";
-                echo"<a href='login.php'>Log Out</a>";
+                if($user_data['username'] == "admin") {
+                    echo"<a href='view_enquiry.php'>Admin Dashboard</a>";
+                    echo"<a href='login.php'>Log Out</a>";
+                } else {
+                    echo"<a href='#'>Welcome, " . $user_data['username'] . "</a>";
+                    echo"<a href='login.php'>Log Out</a>";
+                }
             } else {
                echo"<a href='login.php'>Login</a>";
             }

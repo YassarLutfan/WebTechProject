@@ -10,10 +10,21 @@
     $addressPostcode = $_POST['addressPostcode'];
 
     // files
-    // TODO CURRENTLY UNHANDLED!!!
     $resume    = $_FILES['resume'];
     $appearance = $_FILES['appearance'];
 
+    // create unique temp directory
+    $temp_dir = "temp/" . $firstName . time() . "/";
+    mkdir($temp_dir);
+
+    // move files to temp directory
+    $temp_resume_file = $temp_dir . basename($_FILES["resume"]["name"]);
+    $temp_resume_file_type = strtolower(pathinfo($temp_resume_file, PATHINFO_EXTENSION));
+    move_uploaded_file($_FILES["resume"]["tmp_name"], $temp_resume_file);
+
+    $temp_image_file = $temp_dir . basename($_FILES["appearance"]["name"]);
+    $temp_image_file_type = strtolower(pathinfo($temp_image_file, PATHINFO_EXTENSION));
+    move_uploaded_file($_FILES["appearance"]["tmp_name"], $temp_image_file);
 
 ?>
 
@@ -55,7 +66,8 @@
             <input type=\"hidden\" name=\"addressStreet\" value=\"$addressStreet\">
             <input type=\"hidden\" name=\"addressCity\" value=\"$addressCity\">
             <input type=\"hidden\" name=\"addressState\" value=\"$addressState\">
-            <input type=\"hidden\" name=\"addressPostcode\" value=\"$addressPostcode\">";
+            <input type=\"hidden\" name=\"addressPostcode\" value=\"$addressPostcode\">
+            <input type=\"hidden\" name=\"filepath\" value=\"$temp_dir\">";
         ?>
                 <input type="submit" value="Confirm">
         </form>

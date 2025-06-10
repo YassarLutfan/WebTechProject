@@ -21,6 +21,44 @@ $addressStreet = $_POST['addressStreet'];
 $addressCity = $_POST['addressCity'];
 $addressState = $_POST['addressState'];
 $addressPostcode = intval($_POST['addressPostcode']);
+$filepath = $_POST['filepath'];
+
+// handling folder transfer
+$folder = substr($filepath, 5);
+$permanentpath = "local_storage/" . $folder;
+
+// taken from geeksforgeeks
+function custom_copy($src, $dst) { 
+
+    // open the source directory
+    $dir = opendir($src); 
+
+    // Make the destination directory if not exist
+    @mkdir($dst); 
+
+    // Loop through the files in source directory
+    while( $file = readdir($dir) ) { 
+
+        if (( $file != '.' ) && ( $file != '..' )) { 
+            if ( is_dir($src . '/' . $file) ) 
+            { 
+
+                // Recursively calling custom copy function
+                // for sub directory 
+                custom_copy($src . '/' . $file, $dst . '/' . $file); 
+            } 
+            else { 
+                copy($src . '/' . $file, $dst . '/' . $file);
+		unlink($src . '/' . $file); 
+            } 
+        } 
+    } 
+    closedir($dir);
+    rmdir($src);
+} 
+
+custom_copy($filepath, $permanentpath);
+shell_exec("rm -rf " . $filepath);
 
 $sql = "INSERT IGNORE INTO join_us (
     first_name,
@@ -31,6 +69,7 @@ $sql = "INSERT IGNORE INTO join_us (
     city,
     malaysia_state,
     postcode,
+    filepath,
     reg_date
     ) VALUES (
         '$firstName',
@@ -41,6 +80,7 @@ $sql = "INSERT IGNORE INTO join_us (
         '$addressCity',
         '$addressState',
         '$addressPostcode',
+        '$permanentpath',
         NOW()
         )";
 

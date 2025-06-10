@@ -87,6 +87,7 @@ $sql = "CREATE TABLE IF NOT EXISTS join_us (
     city VARCHAR(50),
     malaysia_state VARCHAR(50),
     postcode INT(5),
+    filepath VARCHAR(50),
 	reg_date TIMESTAMP
 	)";
 

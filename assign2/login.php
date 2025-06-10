@@ -10,6 +10,7 @@
 <body class="smart-footer">
 
 <?php
+//login page also function as a logout system
 session_start();
 if(isset($_SESSION['user_id']))
 {
@@ -42,6 +43,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 
 		if(!empty($user_name) && !empty($password))
 		{
+            //make username and passwork case insensitive
             $user_name_case_insen = strtolower($user_name);
             $password_case_insen = strtolower($password);
 
@@ -49,6 +51,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 			$query = "SELECT * FROM users WHERE LOWER(username) = '$user_name_case_insen' limit 1";
 			$result = mysqli_query($conn, $query);
 
+            //checking submitted login details with database
 			if($result)
 			{
 				if($result && mysqli_num_rows($result) > 0)
@@ -58,13 +61,15 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 					
 					if(strtolower($user_data['user_password']) === $password_case_insen)
 					{
-
+                        //setting session id to user so that other pages can reference easier
 						$_SESSION['id'] = $user_data['id'];
 
                         if($user_data['username'] === 'admin') {
+                            //takes admin directly to one of admin dashboard pages
                             header("Location: view_enquiry.php");
                             die;
                         } else {
+                            //takes regular user back to index page
                             header("Location: index.php");
                             die;
                         }

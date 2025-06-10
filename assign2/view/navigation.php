@@ -12,15 +12,16 @@
         die("Connection failed: " . mysqli_connect_error());
     }
 
+    //login checking is done inside nav bar because nav bar uses login user data and is present on all pages
     function check_login($conn)
 {
-
+    //checks to see if a session is active
 	if(isset($_SESSION['id']))
 	{
-
+        //using session id to reference back to database
 		$id = $_SESSION['id'];
 		$query = "select * from users where id = '$id' limit 1";
-
+        //getting user data from database
 		$result = mysqli_query($conn,$query);
 		if($result && mysqli_num_rows($result) > 0)
 		{
@@ -30,7 +31,7 @@
 		}
 	}
 }
-
+    //setting user_data to store user data from database for use 
     $user_data = check_login($conn);
 
 ?>
@@ -70,16 +71,21 @@
             <a href="registration.php">Membership</a>
             <a href="findalocation.php">Find A Store</a>
             <?php
+            //changes buttons of nav bar based on user
+            //checks to see if a user is logged in
             if(isset($_SESSION['id'])) {
+                //if it is admin then nav bar will have a button to take admin back to admin dashboard
                 if($user_data['username'] === "admin") {
                     echo"<a href='view_enquiry.php'>Admin Dashboard</a>";
-                    echo"<a href='login.php'>Log Out</a>";
+                    echo"<a href='login.php'>Log Out</a>";  //login replaced with log out
                 } else {
+                    //regular users will just have a welcome message in their nav bar
                     echo"<a href='#'>Welcome, " . $user_data['username'] . "</a>";
-                    echo"<a href='login.php'>Log Out</a>";
+                    echo"<a href='login.php'>Log Out</a>";  //log in replaced with log out
                 }
             } else {
-               echo"<a href='login.php'>Login</a>";
+                //if a user is not logged in then there will be a login button
+                echo"<a href='login.php'>Login</a>";
             }
 
             ?>

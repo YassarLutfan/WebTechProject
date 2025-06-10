@@ -109,6 +109,7 @@ if (mysqli_query($conn, $sql)) {
     echo "Error creating table: " . mysqli_error($conn);
 }
 
+// creates and always make sure there is a user with the username admin
 $sql = "INSERT IGNORE INTO users (id, username, user_password) 
     VALUES ('1', 'admin', 'admin')
     ON DUPLICATE KEY UPDATE

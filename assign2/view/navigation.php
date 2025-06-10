@@ -71,7 +71,7 @@
             <a href="findalocation.php">Find A Store</a>
             <?php
             if(isset($_SESSION['id'])) {
-                if($user_data['username'] == "admin") {
+                if($user_data['username'] === "admin") {
                     echo"<a href='view_enquiry.php'>Admin Dashboard</a>";
                     echo"<a href='login.php'>Log Out</a>";
                 } else {

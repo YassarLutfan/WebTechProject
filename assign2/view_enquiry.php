@@ -32,6 +32,16 @@
 }
 
     $user_data = check_login($conn);
+
+    if(isset($_SESSION['id'])) {
+        if($user_data['username'] !== "admin") {
+            header("Location: index.php");
+            die;
+        }
+    } else {
+        header("Location: index.php");
+            die;
+    }
 ?>
 
 <!DOCTYPE html>

@@ -15,7 +15,7 @@ if (!$conn) {
 //mysqli_query() function performs a query against a database.
 $sql = "CREATE DATABASE IF NOT EXISTS BrewNGo";
 if (mysqli_query($conn, $sql)) {
-    echo "Database created successfully";
+    //echo "Database created successfully";
 } else {
     echo "Error creating database: " . mysqli_error($conn);
 }
@@ -54,7 +54,7 @@ if (!$conn) {
 	)";
 
 if (mysqli_query($conn, $sql)) {
-    echo "Table Enquiry created successfully";
+    //echo "Table Enquiry created successfully";
 } else {
     echo "Error creating table: " . mysqli_error($conn);
 }
@@ -71,14 +71,12 @@ $sql = "CREATE TABLE IF NOT EXISTS membership (
 	)";
 
 if (mysqli_query($conn, $sql)) {
-    echo "Table Membership created successfully";
+    //echo "Table Membership created successfully";
 } else {
     echo "Error creating table: " . mysqli_error($conn);
 }
 
 // sql to create joinus table
-// not sure how to do files
-// this form has a resume and image
 $sql = "CREATE TABLE IF NOT EXISTS join_us (
 	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 	first_name VARCHAR(30) NOT NULL,
@@ -93,7 +91,7 @@ $sql = "CREATE TABLE IF NOT EXISTS join_us (
 	)";
 
 if (mysqli_query($conn, $sql)) {
-    echo "Table join_us created successfully";
+    //echo "Table join_us created successfully";
 } else {
     echo "Error creating table: " . mysqli_error($conn);
 }
@@ -106,7 +104,7 @@ $sql = "CREATE TABLE IF NOT EXISTS users (
 	)";
 
 if (mysqli_query($conn, $sql)) {
-    echo "Table users created successfully";
+    //echo "Table users created successfully";
 } else {
     echo "Error creating table: " . mysqli_error($conn);
 }
@@ -117,7 +115,7 @@ $sql = "INSERT IGNORE INTO users (id, username, user_password)
     username = 'admin', user_password = 'admin'";
 
 if (mysqli_query($conn, $sql)) {
-    echo "Table users created successfully";
+    //echo "admin created successfully";
 } else {
     echo "Error creating table: " . mysqli_error($conn);
 }

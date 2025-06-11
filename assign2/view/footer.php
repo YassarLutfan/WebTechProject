@@ -19,8 +19,8 @@
             <div class="footer-col">
               <h4>Enhancement</h4>
               <ul>
-                <li><a href="enhancement.php">Sections</a></li>
-		<li><a href="enhancement2.php">Sections Assign 2</a></li>
+                <li><a href="enhancement.php">Assignment 1</a></li>
+                <li><a href="enhancement2.php">Assignment 2</a></li>
               </ul>
             </div>
             <div class="footer-col">

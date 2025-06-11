@@ -27,7 +27,7 @@ $filepath = $_POST['filepath'];
 $folder = substr($filepath, 5);
 $permanentpath = "local_storage/" . $folder;
 
-// taken from geeksforgeeks
+// adapted from geeksforgeeks
 function custom_copy($src, $dst) { 
 
     // open the source directory
@@ -58,7 +58,6 @@ function custom_copy($src, $dst) {
 } 
 
 custom_copy($filepath, $permanentpath);
-shell_exec("rm -rf " . $filepath);
 
 $sql = "INSERT IGNORE INTO join_us (
     first_name,

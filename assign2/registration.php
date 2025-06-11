@@ -46,7 +46,7 @@
                       </p>
                       <p>
                           <label for="loginPassword">Password</label><br>
-                          <input type="password" name="loginPassword" id="loginPassword" required="required" pattern="[a-zA-Z]+" maxlength="25" placeholder="**********">
+                          <input type="password" name="loginPassword" id="loginPassword" required="required" maxlength="25" placeholder="**********">
                       </p>
 
                   </fieldset>

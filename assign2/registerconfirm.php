@@ -4,6 +4,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "BrewNGo";
+$used = FALSE; // flag for if user or email is taken
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password,$dbname);
@@ -18,7 +19,7 @@ $email = $_POST['email'];
 $loginID = $_POST['loginID'];
 $loginPassword = $_POST['loginPassword'];
 
-$sql1 = "SELECT email FROM users WHERE email = ?";
+$sql1 = "SELECT email FROM membership WHERE email = ?";
 $stmt = mysqli_prepare($conn, $sql1);
 
 mysqli_stmt_bind_param($stmt, "s", $email);
@@ -30,9 +31,22 @@ mysqli_stmt_execute($stmt);
 mysqli_stmt_store_result($stmt);
 
 if (mysqli_stmt_num_rows($stmt) > 0) {
-    echo "Email already exists.";
-} else {
-    echo "Email is available.";
+    $used = TRUE;
+}
+
+$sql1 = "SELECT username FROM users WHERE username = ?";
+$stmt = mysqli_prepare($conn, $sql1);
+
+mysqli_stmt_bind_param($stmt, "s", $loginID);
+
+// Execute the query
+mysqli_stmt_execute($stmt);
+
+// Store result
+mysqli_stmt_store_result($stmt);
+
+if (mysqli_stmt_num_rows($stmt) > 0) {
+    $used = TRUE;
 }
 
 mysqli_stmt_close($stmt);
@@ -69,8 +83,14 @@ mysqli_stmt_close($stmt);
             <input type=\"hidden\" name=\"email\" value=\"$email\">
             <input type=\"hidden\" name=\"loginID\" value=\"$loginID\">
             <input type=\"hidden\" name=\"loginPassword\" value=\"$loginPassword\">";
+
+	    if ($used) {
+	        echo "This email or username is already in use.";
+            } else {
+                echo "<input type=\"submit\" value=\"Confirm\">";
+            }
         ?>
-                <input type="submit" value="Confirm">
+                
         </form>
 
     </section>

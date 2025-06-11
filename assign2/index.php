@@ -88,6 +88,7 @@
               <h4>Enhancement</h4>
               <ul>
                 <li><a href="enhancement.php">Sections</a></li>
+		<li><a href="enhancement2.php">Sections Assign 2</a></li>
               </ul>
             </div>
             <div class="footer-col">

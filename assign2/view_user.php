@@ -66,7 +66,7 @@
             <label for="sidebar-active" class="close-sidebar-button">
                 <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e3e3e3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
             </label>
-            <a class="home-link" href="index.php"><img class="logo" src="images/Brew&GoLogo.jpg" alt="logo"></a>
+            <a class="home-link" href="view_user.php"><img class="logo" src="images/Brew&GoLogo.jpg" alt="logo"></a>
 
             <a href="view_user.php">User View</a>
             <a href="view_job.php">Job View</a>

@@ -29,12 +29,12 @@
 
     <div class="promotion">
         <h2>Check Out Our Lastest Promotions</h2>
-        <a href="activity.html"><img src="images/PromotionImage.png" alt="promotion" ></a>
+        <a href="activity.php"><img src="images/PromotionImage.png" alt="promotion" ></a>
     </div>
 
     <div class="news">
         <h2>Stories And News</h2>
-        <a href="activity.html"><img src="images/Luckydraw.png" alt="luckydraw" ></a>
+        <a href="activity.php"><img src="images/Luckydraw.png" alt="luckydraw" ></a>
     </div>
 
     <div class="indexlocation">
@@ -93,7 +93,8 @@
             <div class="footer-col">
               <h4>Video</h4>
               <ul>
-                <li><a href="https://www.youtube.com/watch?v=kLPx5vcNNF8&feature=youtu.be">Watch</a></li>
+                <li><a href="https://www.youtube.com/watch?v=kLPx5vcNNF8&feature=youtu.be">Assignment 1</a></li>
+                <li><a href="#">Assignment 2</a></li>
               </ul>
             </div>            
             <div class="footer-col">

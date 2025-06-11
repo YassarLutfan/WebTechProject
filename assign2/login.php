@@ -64,7 +64,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
                         //setting session id to user so that other pages can reference easier
 						$_SESSION['id'] = $user_data['id'];
 
-                        if($user_data['username'] === 'admin') {
+                        if($user_data['username'] === 'Admin') {
                             //takes admin directly to one of admin dashboard pages
                             header("Location: view_enquiry.php");
                             die;

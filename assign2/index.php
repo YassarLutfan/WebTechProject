@@ -29,12 +29,12 @@
 
     <div class="promotion">
         <h2>Check Out Our Lastest Promotions</h2>
-        <a href="activity.html"><img src="images/PromotionImage.png" alt="promotion" ></a>
+        <a href="activity.php"><img src="images/PromotionImage.png" alt="promotion" ></a>
     </div>
 
     <div class="news">
         <h2>Stories And News</h2>
-        <a href="activity.html"><img src="images/Luckydraw.png" alt="luckydraw" ></a>
+        <a href="activity.php"><img src="images/Luckydraw.png" alt="luckydraw" ></a>
     </div>
 
     <div class="indexlocation">

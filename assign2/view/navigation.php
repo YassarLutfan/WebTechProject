@@ -75,7 +75,7 @@
             //checks to see if a user is logged in
             if(isset($_SESSION['id'])) {
                 //if it is admin then nav bar will have a button to take admin back to admin dashboard
-                if($user_data['username'] === "admin") {
+                if($user_data['username'] === "Admin") {
                     echo"<a href='view_enquiry.php'>Admin Dashboard</a>";
                     echo"<a href='login.php'>Log Out</a>";  //login replaced with log out
                 } else {

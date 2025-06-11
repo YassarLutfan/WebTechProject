@@ -112,9 +112,9 @@ if (mysqli_query($conn, $sql)) {
 
 // creates and always make sure there is a user with the username admin
 $sql = "INSERT IGNORE INTO users (id, username, user_password) 
-    VALUES ('1', 'admin', 'admin')
+    VALUES ('1', 'Admin', 'Admin')
     ON DUPLICATE KEY UPDATE
-    username = 'admin', user_password = 'admin'";
+    username = 'Admin', user_password = 'Admin'";
 
 if (mysqli_query($conn, $sql)) {
     //echo "admin created successfully";

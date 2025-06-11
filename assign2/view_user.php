@@ -37,7 +37,7 @@
     //to check if user on this page is admin, otherwise send user to index page
     //also functions as a safety net if admin accidently edits themself or deletes themself
     if(isset($_SESSION['id'])) {
-        if($user_data['username'] !== "admin" || $user_data['user_password'] !== "admin") {
+        if($user_data['username'] !== "Admin" || $user_data['user_password'] !== "Admin") {
             header("Location: index.php");
             die;
         }

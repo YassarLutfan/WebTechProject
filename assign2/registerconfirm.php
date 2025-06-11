@@ -1,12 +1,41 @@
 <?php
+// set the servername,username and password
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "BrewNGo";
 
-    $firstName = $_POST['firstName'];
-    $lastName = $_POST['lastName'];
-    $email = $_POST['email'];
-    $loginID = $_POST['loginID'];
-    $loginPassword = $_POST['loginPassword'];
+// Create connection
+$conn = mysqli_connect($servername, $username, $password,$dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+};
 
+$firstName = $_POST['firstName'];
+$lastName = $_POST['lastName'];
+$email = $_POST['email'];
+$loginID = $_POST['loginID'];
+$loginPassword = $_POST['loginPassword'];
 
+$sql1 = "SELECT email FROM users WHERE email = ?";
+$stmt = mysqli_prepare($conn, $sql1);
+
+mysqli_stmt_bind_param($stmt, "s", $email);
+
+// Execute the query
+mysqli_stmt_execute($stmt);
+
+// Store result
+mysqli_stmt_store_result($stmt);
+
+if (mysqli_stmt_num_rows($stmt) > 0) {
+    echo "Email already exists.";
+} else {
+    echo "Email is available.";
+}
+
+mysqli_stmt_close($stmt);
 ?>
 
 <!DOCTYPE html>
